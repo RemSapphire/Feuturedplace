@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Tukuran - Tourism Guide</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1E88E5',secondary:'#FFA000'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+position: relative;
+overflow-x: hidden;
+}
+.blob {
+position: absolute;
+border-radius: 50%;
+filter: blur(40px);
+opacity: 0.15;
+z-index: -1;
+animation: blobFloat 20s infinite alternate ease-in-out;
+}
+.blob-1 {
+width: 400px;
+height: 400px;
+background: var(--tw-colors-primary);
+top: -100px;
+left: -100px;
+}
+.blob-2 {
+width: 350px;
+height: 350px;
+background: var(--tw-colors-secondary);
+top: 30%;
+right: -50px;
+animation-delay: -2s;
+}
+.blob-3 {
+width: 300px;
+height: 300px;
+background: var(--tw-colors-primary);
+bottom: 20%;
+left: -80px;
+animation-delay: -4s;
+}
+.blob-4 {
+width: 250px;
+height: 250px;
+background: var(--tw-colors-secondary);
+bottom: -50px;
+right: 10%;
+animation-delay: -6s;
+}
+@keyframes blobFloat {
+0% {
+transform: translate(0, 0) scale(1);
+}
+33% {
+transform: translate(30px, -30px) scale(1.1);
+}
+66% {
+transform: translate(-20px, 20px) scale(0.9);
+}
+100% {
+transform: translate(0, 0) scale(1);
+}
+}
+.place-card {
+transition: transform 0.5s ease, opacity 0.5s ease;
+perspective: 1000px;
+}
+.place-card:hover {
+transform: translateY(-10px);
+}
+.morph-animation {
+animation: morphShape 8s infinite alternate ease-in-out;
+}
+@keyframes morphShape {
+0% {
+border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+50% {
+border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+}
+100% {
+border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+}
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.scroll-indicator {
+animation: bounce 2s infinite;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+transform: translateY(0);
+}
+40% {
+transform: translateY(-10px);
+}
+60% {
+transform: translateY(-5px);
+}
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+<div class="blob blob-4"></div>
+<!-- Navigation Bar -->
+
+<!-- Hero Section -->
+<section class="pt-24 pb-12 md:pt-32 md:pb-16 px-4 bg-gradient-to-b from-primary/10 to-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-8">
+<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Discover the Beauty of Tukuran</h1>
+<p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore the hidden gems of Zamboanga del Sur, Philippines - where pristine beaches meet local culture.</p>
+</div>
+<div class="flex justify-center">
+<div class="scroll-indicator text-primary">
+<i class="ri-arrow-down-line ri-2x"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Places Section -->
+<section class="py-12 px-4">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-900">Featured Places</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<!-- Place 1 -->
+<div class="place-card fade-in bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="relative h-64 overflow-hidden">
+<div class="morph-animation absolute inset-0 z-10 bg-primary/20 pointer-events-none"></div>
+<img src="image1.jpg"
+alt="Donels Tukuran"
+class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<h3 class="absolute bottom-4 left-4 text-white text-xl font-bold">Donels Tukuran</h3>
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-sm text-gray-600">Tukuran, Zamboanga del Sur, Philippines</p>
+</div>
+<p class="text-gray-700 mb-4">A premier beach resort offering a perfect blend of comfort and natural beauty. Enjoy the pristine shoreline, comfortable accommodations, and excellent local cuisine.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Beach Resort</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Swimming</span>
+<span class="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full">Dining</span>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-button flex items-center justify-center cursor-pointer">
+<i class="ri-information-line mr-2"></i>
+<span><a href="#">View Details</a></span>
+</button>
+</div>
+</div>
+<!-- Place 2 -->
+<div class="place-card fade-in bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="relative h-64 overflow-hidden">
+<div class="morph-animation absolute inset-0 z-10 bg-primary/20 pointer-events-none"></div>
+<img src="image2.jpg"
+alt="LGU Beach Tukuran"
+class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<h3 class="absolute bottom-4 left-4 text-white text-xl font-bold">LGU Beach Tukuran</h3>
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-sm text-gray-600">Tukuran, Zamboanga del Sur, Philippines</p>
+</div>
+<p class="text-gray-700 mb-4">A public beach maintained by the local government unit, offering affordable access to beautiful coastal views. Perfect for family outings with facilities for picnics and gatherings.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Public Beach</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Picnic</span>
+<span class="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full">Budget-friendly</span>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-button flex items-center justify-center cursor-pointer">
+<i class="ri-information-line mr-2"></i>
+<span><a href="#">View Details</a></span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Place 3 -->
+<div class="place-card fade-in bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="relative h-64 overflow-hidden">
+<div class="morph-animation absolute inset-0 z-10 bg-secondary/20 pointer-events-none"></div>
+<img src="image3.jpg"
+alt="Baguio Beach Tukuran"
+class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<h3 class="absolute bottom-4 left-4 text-white text-xl font-bold">Baguio Beach Tukuran</h3>
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-sm text-gray-600">Tukuran, Zamboanga del Sur, Philippines</p>
+</div>
+<p class="text-gray-700 mb-4">A serene beach known for its natural beauty and tranquil atmosphere. Ideal for those seeking a peaceful retreat away from crowded tourist spots, with stunning sunset views.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Scenic Beach</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Sunset Views</span>
+<span class="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full">Photography</span>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-button flex items-center justify-center cursor-pointer">
+<i class="ri-information-line mr-2"></i>
+<span><a href="https://reynie23.github.io/Majorr/">View Details</a></span>
+</button>
+</div>
+</div>
+<!-- Place 4 -->
+<div class="place-card fade-in bg-white rounded-lg overflow-hidden shadow-lg">
+<div class="relative h-64 overflow-hidden">
+<div class="morph-animation absolute inset-0 z-10 bg-primary/20 pointer-events-none"></div>
+<img src="image4.jpg"
+alt="Tukuran Fish Port"
+class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<h3 class="absolute bottom-4 left-4 text-white text-xl font-bold">Tukuran Fish Port</h3>
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-sm text-gray-600">Tukuran, Zamboanga del Sur, Philippines</p>
+</div>
+<p class="text-gray-700 mb-4">Tukuran, known for its rice fields and vibrant fishing industry, is home to a thriving fish port where visitors can watch fishermen unload their daily catch, explore the seafood market, and enjoy fresh seafood dishes. Its long stretch of fine black sand also makes it a favorite weekend getaway for locals and visitors from nearby towns like Pagadian.</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Fish Port</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-xs rounded-full">Local Culture</span>
+<span class="px-3 py-1 bg-green-100 text-green-600 text-xs rounded-full">Seafood</span>
+</div>
+<button class="w-full py-3 bg-primary text-white rounded-button flex items-center justify-center cursor-pointer">
+<i class="ri-information-line mr-2"></i>
+<span><a href="#">View Details</a></span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Explore More Section -->
+<section class="py-12 px-4 bg-primary/5">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-10">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Why Visit Tukuran?</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Discover the charm of this coastal paradise in Zamboanga del Sur</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="fade-in bg-white p-6 rounded-lg shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-4">
+<i class="ri-sun-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Pristine Beaches</h3>
+<p class="text-gray-600">Enjoy unspoiled coastlines with crystal clear waters and white sand beaches perfect for swimming and relaxation.</p>
+</div>
+<!-- Feature 2 -->
+<div class="fade-in bg-white p-6 rounded-lg shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-4">
+<i class="ri-restaurant-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Fresh Seafood</h3>
+<p class="text-gray-600">Sample the freshest seafood caught daily by local fishermen, prepared in traditional Zamboangueño style.</p>
+</div>
+<!-- Feature 3 -->
+<div class="fade-in bg-white p-6 rounded-lg shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-4">
+<i class="ri-community-line ri-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Local Culture</h3>
+<p class="text-gray-600">Immerse yourself in the rich cultural heritage of Tukuran through local festivals, crafts, and traditions.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Travel Tips Section -->
+<section class="py-12 px-4">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-10">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Travel Tips</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Make the most of your visit to Tukuran with these helpful tips</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Tip 1 -->
+<div class="fade-in flex bg-white rounded-lg overflow-hidden shadow-md">
+<div class="w-24 md:w-32 bg-primary/10 flex items-center justify-center text-primary">
+<i class="ri-calendar-line ri-2x"></i>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold mb-2">Best Time to Visit</h3>
+<p class="text-gray-600">Visit during the dry season (November to May) for the best beach experience and outdoor activities.</p>
+</div>
+</div>
+<!-- Tip 2 -->
+<div class="fade-in flex bg-white rounded-lg overflow-hidden shadow-md">
+<div class="w-24 md:w-32 bg-secondary/10 flex items-center justify-center text-secondary">
+<i class="ri-bus-line ri-2x"></i>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold mb-2">Getting Around</h3>
+<p class="text-gray-600">Tricycles and motorcycles are the main modes of transportation within Tukuran. Consider renting for convenience.</p>
+</div>
+</div>
+<!-- Tip 3 -->
+<div class="fade-in flex bg-white rounded-lg overflow-hidden shadow-md">
+<div class="w-24 md:w-32 bg-primary/10 flex items-center justify-center text-primary">
+<i class="ri-hotel-line ri-2x"></i>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold mb-2">Accommodation</h3>
+<p class="text-gray-600">Book accommodations in advance, especially during peak season and local festivals.</p>
+</div>
+</div>
+<!-- Tip 4 -->
+<div class="fade-in flex bg-white rounded-lg overflow-hidden shadow-md">
+<div class="w-24 md:w-32 bg-secondary/10 flex items-center justify-center text-secondary">
+<i class="ri-wallet-3-line ri-2x"></i>
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold mb-2">Local Currency</h3>
+<p class="text-gray-600">Bring cash as ATMs are limited. Most small establishments don't accept credit cards.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script id="scroll-animations">
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, {
+threshold: 0.1
+});
+fadeElements.forEach(element => {
+observer.observe(element);
+});
+});
+</script>
+<script id="smooth-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
